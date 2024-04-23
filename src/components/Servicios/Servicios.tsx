@@ -12,7 +12,7 @@ export function Servicios() {
         <h1 className=" font-Impact text-3xl mb-8 tracking-wider">
           SUPERÁ TUS LIMITES.
         </h1>
-        <h2 className="font-Spartan text-xl text-gray-300 mb-8">
+        <h2 className="font-Spartan text-xl text-gray-300 mb-8 lg:mb-[-100px]">
           Descubrí cómo nuestra academia te lleva al siguente nivel con programas de entrenamiento únicos.
             <br />
           Aprovechá las  ventajas de un enfoque integral que desafía tu cuerpo y 
@@ -21,7 +21,7 @@ export function Servicios() {
           <span>
           </span>
         </h2>
-        <div className="bg-black w-full min-h-screen gap-4 flex-wrap flex justify-center items-center mt-[-100px]">
+        <div className="bg-black w-full min-h-screen gap-4 flex-wrap flex justify-center items-center mt-[-100px] lg:mb-[-100px]">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-[100px] md:mt-[100px] lg:mt-[-100px] ">
             
             <div className=" w-full p-2 bg-black transform transition-all hover:-translate-y-2 duration-300">

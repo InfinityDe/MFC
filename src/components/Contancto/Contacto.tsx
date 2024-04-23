@@ -1,130 +1,134 @@
-import React, { useState } from 'react';
-import { useForm, ValidationError } from '@formspree/react';
-import styled from 'styled-components';
-import { CiInstagram } from "react-icons/ci";
-import { MdOutlineEmail } from "react-icons/md";
-import { FaWhatsapp } from "react-icons/fa";
+import React from 'react';
 import Image from 'next/image';
+import { useState } from 'react';
+import { useForm } from '@formspree/react';
+import styled from 'styled-components';
+import { MdOutlineEmail } from "react-icons/md"
+import { FaWhatsapp } from "react-icons/fa";
+import { CiInstagram } from "react-icons/ci";
 
 function Contacto() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phoneNumber: '',
-    dateOfBirth: '',
-    message: ''
-  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const [state, handleSubmit] = useForm("xkndqjjd");
-
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    handleSubmit(e);
-  };
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        phoneNumber: '',
+        dateOfBirth: '',
+        message: ''
+      });
+    
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+      };
+    
+      const [state, handleSubmit] = useForm("xkndqjjd");
+    
+      const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        handleSubmit(e);
+      };
 
   return (
-      <section id="Contacto" className='sm:mt-[300px] mt-[450px]'>
-          <div>
-          <Image
+    <section id="Contacto" className="relative h-[800px] bg-center flex items-center mb-20">
+      
+      {/* Imagen de fondo */}
+      <div className="absolute inset-0 bg-center bg-no-repeat transform scale-75 h-[870px] mt-80 lg:-mt-20 md:-mt-20">
+        <Image
             src="/assets/FONDO3.png"
             alt="Vercel Logo"
-            width={1000}
+            width={1100}
             height={0}
-            className="w-[100%] sm:w-[900px] h-[100%] sm:h-[900px] sm:ml-64 ml-[-100px] sm:mt-[-100px] absolute opacity-5"
+            className='opacity-5'
             />
-          </div>
-        <Border className='sm:ml-[-30%] ml-[-30%]'>
-          <h1 className='font-Impact font-extrabold tracking-widest text-[7rem] absolute opacity-20 sm:ml-[530px] ml-[250px] mt-[-120px] sm:mt-[-20px]'>03</h1>
-          <div className="flex items-center justify-center h-screen">
-            <div className="flex justify-center w-full">
-              <div className="w-1/2 mr-[-100px]">
-                <div className="p-8">
-                  <h2 className="text-2xl font-Impact tracking-widest ml-10 sm:mt-[30px] mt-[-125px] text-white">CONTACTANOS</h2>
-                  <p className='text-gray-400 mt-16 ml-10 w-full mb-6 font-Spartan text-xl'>Sientase libre de contactarnos en cualquier momento,<br /> nos comunicaremos con usted tan pronto como podamos!!</p>
-                  <form onSubmit={onSubmit} className='ml-10 subscribe'>
-                    <input
-                      type="text"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleChange}
-                      className="font-Spartan border-b border-white mb-10 w-[250px] sm:w-[400px] input-with-placeholder h-14"
-                      placeholder="Nombre"
-                      required />
-                      
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="font-Spartan border-b text-white mb-10 w-[250px] sm:w-[400px] input-with-placeholder h-14"
-                      placeholder="Correo electrónico"
-                      required
-                    />
-                    <input
-                      type="number"
-                      name="phoneNumber"
-                      value={formData.phoneNumber}
-                      onChange={handleChange}
-                      className="font-Spartan border-b text-white mb-10 w-[250px] sm:w-[400px] input-with-placeholder h-14"
-                      placeholder="Número de telefono"
-                      required
-                    />
-                    <input
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="font-Spartan border-b text-white mb-10 w-[250px] sm:w-[400px] input-with-placeholder h-14"
-                      placeholder="Mensaje"
-                      required
-                    ></input>
-                  </form>
-                </div>
-              </div>
+      </div>
+            
+      {/* Contenido centrado */}
+      <div className="flex-col justify-center items-center h-full w-full text-white mt-1" style={{ zIndex: 2 }}>
+        
+        {/* Contenedor de título y texto */}
+        <div className="flex-col justify-between text-left ml-5 md:ml-20 lg:ml-20 mt-24">
+        <h1 className='font-Impact font-extrabold tracking-widest text-[7rem] absolute opacity-20 md:mt-[-90px] lg:mt-[-90px] mt-[-100px]'>03</h1>
+            <h1 className="text-2xl font-Impact tracking-widests md:ml-8 lg:ml-8 mb-16">CONTACTANOS</h1>
+            <h2 className='text-gray-400 font-Spartan text-xl mb-20'>Sientase libre de contactarnos en cualquier momento,<br /> nos comunicaremos con usted tan pronto como podamos!!</h2>
+        </div>
+        
+        {/* Contenedor de formulario y botones */}
+        <div className="flex w-full justify-between">
+          <Border>
+          <form onSubmit={onSubmit} className="flex flex-col ml-[65px] lg:ml-20 md:ml-20 subscribe">
+            <input 
+                type="text"
+                name='fullName'
+                value={formData.fullName}
+                onChange={handleChange}
+                required
+                placeholder="Nombre" 
+                className="font-Spartan border-b border-white mb-10 lg:w-[550px] md:w-[400px] w-[250px] ml-[-30px] md:ml-0 lg:ml-0 input-with-placeholder h-14"
+            />
+
+            <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="font-Spartan border-b text-white mb-10 lg:w-[550px] md:w-[400px] w-[250px] ml-[-30px] md:ml-0 lg:ml-0 input-with-placeholder h-14"
+                placeholder="Correo electrónico"
+                required
+            />
+                                
+            <input
+                type="number"
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                className="font-Spartan border-b text-white mb-10 lg:w-[550px] md:w-[400px] w-[250px] ml-[-30px] md:ml-0 lg:ml-0 input-with-placeholder h-14"
+                placeholder="Número de telefono"
+                required
+            />
+            <input
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className="font-Spartan border-b text-white mb-10 lg:w-[550px] md:w-[400px] w-[250px] ml-[-30px] md:ml-0 lg:ml-0 input-with-placeholder h-14"
+                placeholder="Mensaje"
+                required
+            >
+            </input>
+
+            <button 
+              type="submit"
+              disabled={state.submitting}
+              className="bg-white text-black hover:bg-black hover:text-white border border-black hover:border hover:border-white lg:w-[550px] md:w-[400px] w-[200px] px-1 py-2 z-50">Enviar</button>
+          </form>
+          </Border>
+
+          <div className="flex md:flex-col lg:flex-col lg:mr-20 md:mr-20 lg:mt-24 md:mt-24 mt-[500px]">
+            <div>
+              <button className="mb-10 transform transition-all hover:-translate-y-2 duration-300 md:ml-0 lg:ml-0 ml-[-300px]">
+                <CiInstagram size={52} />
+              </button>
+              <span></span>
             </div>
-          </div>
-                    <button
-                      type="submit"
-                      className="bg-white text-black hover:bg-black hover:text-white hover:border-white hover:border border border-black sm:ml-[600px] ml-[50%] font-bold py-2 sm:px-[200px] px-8 transition ease-in-out duration-150 mb-28 z-50"
-                      disabled={state.submitting}
-                    >
-                      Enviar
-                    </button>
-                    {state.succeeded && <p className='font-Spartan'>Enviado correctamente</p>}
-                    <ValidationError
-                      prefix="Error:"
-                      field="form"
-                      errors={state.errors}
-                    />
-        </Border>
-              <div className="w-full sm:w-1/4 sm:mt-[-550px] ml-2 sm:ml-[63%] flex justify-center items-center sm:absolute">
-                <div className="flex sm:flex-col items-center flex-row ">
-                  <div className="flex items-center">
-                    <button className="mb-10 sm:mt-14 mt-1 transform transition-all hover:-translate-y-2 duration-300">
-                      <CiInstagram size={52} />
-                    </button>
-                    <span className="ml-2 sm:mt-[45px] mb-8">Texto Instagram</span>
-                  </div>
-                  <div className="flex items-center mr-5 sm:mr-[61px] ml-7">
-                    <button className="sm:mb-10 mb-8 transform transition-all hover:-translate-y-2 duration-300">
-                      <MdOutlineEmail size={52} />
-                    </button>
-                    <span className="ml-2 sm:mt-[-12px] mb-8">Texto Email</span>
-                  </div>
-                  <div className="flex items-center ml-2">
-                    <button className="sm:mb-4 mb-8 sm:mr-1 transform transition-all hover:-translate-y-2 duration-300">
-                      <FaWhatsapp size={52} />
-                    </button>
-                    <span className="ml-2 mb-8 sm:mt-[20px]">Texto Whatsapp</span>
-                  </div>
-                </div>
-              </div>
-      </section>
-  );
+
+            <div>
+              <button className="mb-10 transform transition-all hover:-translate-y-2 duration-300 md:ml-0 lg:ml-0 ml-[-200px]">
+                <MdOutlineEmail size={52} />
+              </button>
+              <span></span>  
+            </div>
+
+            <div>
+              <button className="transform transition-all hover:-translate-y-2 duration-300 md:ml-0 lg:ml-0 ml-[-100px]">
+                <FaWhatsapp size={52} />
+              </button>
+              <span></span>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+  )
 }
 
 export default Contacto;

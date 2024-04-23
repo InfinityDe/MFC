@@ -10,7 +10,6 @@ import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { useState } from 'react';
 import planesData, { PlanData } from './Planes.data';
 import { Link as ScrollLink } from "react-scroll";
-import classNames from 'classnames';
 
 function Planes() {
 
@@ -215,7 +214,7 @@ body {
   }
   .swiper-slide {
     width: 25rem !important;
-    left: 30px;
+    left: 25px;
     height: 26rem !important;
   }
   .swiper-slide img {

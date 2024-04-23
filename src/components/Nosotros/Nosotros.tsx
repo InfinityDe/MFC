@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function Nosotros() {
   return (
-    <section id="Nosotros" className="flex text-center mt-32">
+    <section id="Nosotros" className="flex text-center md:mt-32 mt-32 lg:mt-0">
       <div className="flex items-center justify-center w-full">
         <div className=' w-full sm:w-1/2 flex flex-col items-center sm:items-start pr-10'>
           <h1 className='font-Impact font-extrabold tracking-widest text-[7rem] absolute opacity-20 sm:ml-7 ml-[-50px]'>02</h1>
