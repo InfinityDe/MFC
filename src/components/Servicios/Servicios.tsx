@@ -13,11 +13,11 @@ export function Servicios() {
           SUPERÁ TUS LIMITES.
         </h1>
         <h2 className="font-Spartan text-xl text-gray-300 mb-8 lg:mb-[-100px]">
-          Descubrí cómo nuestra academia te lleva al siguente nivel con programas de entrenamiento únicos.
+          Descubrí cómo nuestra academia te lleva al siguente nivel con programas de entrenamientos únicos.
             <br />
           Aprovechá las  ventajas de un enfoque integral que desafía tu cuerpo y 
             <br />
-          mente, ofréciendote la oportunidad de superarte cada día.
+          mente, ofreciéndote la oportunidad de superarte cada día.
           <span>
           </span>
         </h2>

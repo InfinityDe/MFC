@@ -314,65 +314,46 @@ body {
 `
 
 const CustomButton = styled.button `
- border: 2px solid;
- cursor: pointer;
- position: absolute;
- bottom: -2px;
- left: 50%;
- transform: translate(-50%, -50%);
- padding: 1px 5px; 
- height: 36px;
- line-height: 33px;
+   border: 2px solid;
+  cursor: pointer;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1px 5px;
+  height: 36px;
+  line-height: 33px;
 
- &.button-on-image-primary {
-  border-color: #354092;
-  @media (max-width: 500px) {
-      width: 60%;
-      height: 8%;
-    }
+  &.button-on-image-primary {
+    border-color: #354092;
     &:hover {
-  background-color: #354092;
-  transition: 0.3s
- }
-}
+      background-color: #354092;
+      transition: 0.3s;
+    }
+  }
 
- &.button-on-image-secondary {
+  &.button-on-image-secondary {
     border-color: #4d3080;
-
-    @media (max-width: 500px) {
-      width: 60%;
-      height: 8%;
-    }
     &:hover {
-  background-color: #4d3080;
-  transition: 0.3s
- }
-}
+      background-color: #4d3080;
+      transition: 0.3s;
+    }
+  }
 
   &.button-on-image-tertiary {
     border-color: #651925;
-    
-    @media (max-width: 500px) {
-      width: 60%;
-      height: 8%;
-    }
     &:hover {
-  background-color: #651925;
-  transition: 0.3s
- }
-}
+      background-color: #651925;
+      transition: 0.3s;
+    }
+  }
 
   &.button-on-image-quaternary {
     border-color: #c70404;
-    
-    @media (max-width: 500px) {
-      width: 60%;
-      height: 8%;
-    }
     &:hover {
-  background-color: #c70404;
-  transition: 0.3s
- }
-}
+      background-color: #c70404;
+      transition: 0.3s;
+    }
+  }
 
 `

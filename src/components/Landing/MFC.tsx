@@ -28,7 +28,7 @@ export const MFC = () => {
           to="Contacto"
           spy={true}
           smooth={true}
-          offset={-70}
+          offset={10}
           duration={500}
         >
           <button className="absolute bottom-16 left-[43%] bg-black px-10 py-5 font-body text-sm font-bold hover:bg-white hover:text-black transition duration-200">

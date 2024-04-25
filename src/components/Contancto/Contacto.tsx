@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { MdOutlineEmail } from "react-icons/md"
 import { FaWhatsapp } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
+import Link from 'next/link';
 
 function Contacto() {
 
@@ -27,7 +28,11 @@ function Contacto() {
       const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         handleSubmit(e);
+        setIsFormSubmitted(true);
       };
+
+      const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+
 
   return (
     <section id="Contacto" className="relative h-[800px] bg-center flex items-center mb-20">
@@ -49,7 +54,7 @@ function Contacto() {
         {/* Contenedor de título y texto */}
         <div className="flex-col justify-between text-left ml-5 md:ml-20 lg:ml-20 mt-24">
         <h1 className='font-Impact font-extrabold tracking-widest text-[7rem] absolute opacity-20 md:mt-[-90px] lg:mt-[-90px] mt-[-100px]'>03</h1>
-            <h1 className="text-2xl font-Impact tracking-widests md:ml-8 lg:ml-8 mb-16">CONTACTANOS</h1>
+            <h1 className="text-2xl font-Impact tracking-widests md:ml-8 lg:ml-8 mb-16">CONTÁCTANOS</h1>
             <h2 className='text-gray-400 font-Spartan text-xl mb-20'>Sientase libre de contactarnos en cualquier momento,<br /> nos comunicaremos con usted tan pronto como podamos!!</h2>
         </div>
         
@@ -101,27 +106,36 @@ function Contacto() {
               disabled={state.submitting}
               className="bg-white text-black hover:bg-black hover:text-white border border-black hover:border hover:border-white lg:w-[550px] md:w-[400px] w-[200px] px-1 py-2 z-50">Enviar</button>
           </form>
+          {isFormSubmitted && (
+  <p className="text-green-500 mt-2">¡El formulario se ha enviado con éxito!</p>
+)}
           </Border>
 
           <div className="flex md:flex-col lg:flex-col lg:mr-20 md:mr-20 lg:mt-24 md:mt-24 mt-[500px]">
             <div>
-              <button className="mb-10 transform transition-all hover:-translate-y-2 duration-300 md:ml-0 lg:ml-0 ml-[-300px]">
-                <CiInstagram size={52} />
-              </button>
+              <Link href="https://www.instagram.com/mfc_fitnessacademy/">
+                <button className="mb-10 transform transition-all hover:-translate-y-2 duration-300 md:ml-0 lg:ml-0 ml-[-300px]">
+                  <CiInstagram size={52} />
+                </button>
+              </Link>
               <span></span>
             </div>
 
             <div>
-              <button className="mb-10 transform transition-all hover:-translate-y-2 duration-300 md:ml-0 lg:ml-0 ml-[-200px]">
-                <MdOutlineEmail size={52} />
-              </button>
+              <Link href="https://www.instagram.com/mfc_fitnessacademy/">
+                <button className="mb-10 transform transition-all hover:-translate-y-2 duration-300 md:ml-0 lg:ml-0 ml-[-200px]">
+                  <MdOutlineEmail size={52} />
+                </button>
+              </Link>
               <span></span>  
             </div>
 
             <div>
-              <button className="transform transition-all hover:-translate-y-2 duration-300 md:ml-0 lg:ml-0 ml-[-100px]">
-                <FaWhatsapp size={52} />
-              </button>
+              <Link href="https://www.instagram.com/mfc_fitnessacademy/">
+                <button className="transform transition-all hover:-translate-y-2 duration-300 md:ml-0 lg:ml-0 ml-[-100px]">
+                  <FaWhatsapp size={52} />
+                </button>
+              </Link>
               <span></span>
             </div>
             </div>
