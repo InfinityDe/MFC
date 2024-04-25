@@ -24,15 +24,23 @@ function Contacto() {
       };
     
       const [state, handleSubmit] = useForm("xkndqjjd");
+
+      const [isFormSubmitted, setIsFormSubmitted] = useState(false);
     
       const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         handleSubmit(e);
         setIsFormSubmitted(true);
+        if (state.succeeded) {
+          setFormData({
+            fullName: '',
+            email: '',
+            phoneNumber: '',
+            dateOfBirth: '',
+            message: ''
+          });
+        }
       };
-
-      const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-
 
   return (
     <section id="Contacto" className="relative h-[800px] bg-center flex items-center mb-20">
@@ -107,8 +115,8 @@ function Contacto() {
               className="bg-white text-black hover:bg-black hover:text-white border border-black hover:border hover:border-white lg:w-[550px] md:w-[400px] w-[200px] px-1 py-2 z-50">Enviar</button>
           </form>
           {isFormSubmitted && (
-  <p className="text-green-500 mt-2">¡El formulario se ha enviado con éxito!</p>
-)}
+          <p className="text-white mt-10 ml-20">¡El formulario se ha enviado con éxito!</p>
+        )}
           </Border>
 
           <div className="flex md:flex-col lg:flex-col lg:mr-20 md:mr-20 lg:mt-24 md:mt-24 mt-[500px]">
